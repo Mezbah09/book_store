@@ -1,5 +1,6 @@
 <?php 
 require_once 'header.php';
+require_once './dbcon.php';
 
 
 ?>
@@ -44,9 +45,30 @@ require_once 'header.php';
                                     </thead>
                                     <tbody>
                                         <?php 
-                                        $result=mysqli_query($con,"SELECT * FROM 'books");
+                                        
+                                        $result=mysqli_query($con,"SELECT * FROM books");
+                                    
+                                        
+                                        while($row=mysqli_fetch_assoc($result)){
+                                        ?>
+                                        <tr>
+                                            <td><?=$row['book_name'] ?></td>
+                                            <td><img style="width:50px;" src="../images/books/<?= $row['book_image'] ?>" /></td>
+                                            <td><?=$row['book_author_name'] ?></td>
+                                            <td><?=$row['book_publication_name'] ?></td>
+                                            <td><?=$row['book_purchase_date'] ?></td>
+                                            <td><?=$row['book_price'] ?></td>
+                                            <td><?=$row['book_qty'] ?></td>
+                                            <td><?=$row['available_qty'] ?></td>
+                                            
+                                        </tr>
+                                        <?php  
+
+                                    
+                                        }
                                         ?>
 
+ 
                                     
                                     </tbody>
                                 </table>

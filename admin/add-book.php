@@ -16,9 +16,11 @@ if(isset($_POST['save_book'])){
 
     $image= explode('.', $_FILES['book_image']['name']);
     $image=$image[count($image)-1];
-    $image=date('Y-m-d H:i:s.').$image;
+    $image=time().'.'.$image;
 
     $result=mysqli_query($con, "INSERT INTO `books`(`book_name`, `book_image`, `book_author_name`, `book_publication_name`, `book_purchase_date`, `book_price`, `book_qty`, `available_qty`) VALUES ('$book_name','$image','$book_author_name','$book_publication_name','$book_purchase_date','$book_price','$book_qty','$available_qty')");
+    $path=__DIR__.'/../images/books/'.$image;
+    move_uploaded_file($_FILES["book_image"]["tmp_name"], $path);
 
     $params = "";
     if( $result ){

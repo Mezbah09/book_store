@@ -1,7 +1,7 @@
 <?php
 $page=explode('/',$_SERVER['PHP_SELF']);
 $page=$page[count($page) - 1];
-require_once'./dbcon.php';
+require_once './dbcon.php';
 
 
 session_start();
