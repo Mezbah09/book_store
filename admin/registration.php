@@ -25,10 +25,10 @@ if(isset($_POST['Registration'])){
         $input_error['c_password']="The Conform Password field is required";
     }
     if(count($input_error)==0){
-        $email_chack=mysqli_query($link,"SELECT * FROM'USER'WHERE 'email'");
+        $email_chack=mysqli_query($con,"SELECT * FROM'USER'WHERE 'email'");
     }
     $query="INSERT INTO `user`(`name`, `email`, `username`, `password`, `status`) VALUES('$name','$email','$username','$password''inactive')";
-    $result=mysqli_query($link,$query);
+    $result=mysqli_query($con,$query);
 
 }
 ?>

@@ -11,7 +11,7 @@ if(isset($_POST['Login'])){
   $username= $_POST['username'];
     $password= $_POST['password'];
 
-  $username_check=mysqli_query($link,"SELECT * FROM `user` WHERE `username`='$username'");
+  $username_check=mysqli_query($con,"SELECT * FROM `user` WHERE `username`='$username'");
   if(mysqli_num_rows($username_check) >0){
     $row =mysqli_fetch_assoc($username_check);
 
