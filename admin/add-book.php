@@ -11,9 +11,6 @@ if(isset($_POST['save_book'])){
     $book_qty=$_POST['book_qty'];
     $available_qty=$_POST['available_qty'];
     
-    //$page=explode('/',$_SERVER['PHP_SELF']);
-    //$page=$page[count($page) - 1];
-
     $image= explode('.', $_FILES['book_image']['name']);
     $image=$image[count($image)-1];
     $image=time().'.'.$image;
@@ -22,15 +19,10 @@ if(isset($_POST['save_book'])){
     $path=__DIR__.'/../images/books/'.$image;
     move_uploaded_file($_FILES["book_image"]["tmp_name"], $path);
 
-    $params = "";
-    if( $result ){
-        $params = http_build_query([
-            'status' => 'success'
-        ]);
+    if( $result){
+        $success="Book added successfully";
     }else{
-        $params = http_build_query([
-            'status' => 'failed'
-        ]);
+        $error="Book added Fail";
     }
 }
 
@@ -53,6 +45,19 @@ if(isset($_POST['save_book'])){
                    <div class="col-sm-6 col-sm-offset-3">
                    <div class="panel">
                         <div class="panel-content">
+                            <?php 
+                            if(isset($success)){
+                             ?>
+                             <div class="alert alert-info">
+                                 <?php 
+                                 echo($success);
+                                 ?>
+                             </div>
+                             <?php 
+                            }
+                             ?>
+
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">

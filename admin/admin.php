@@ -16,7 +16,9 @@
                 
                 <div class="row animated fadeInUp">
                    <div class="col-sm-12">
-                       test
+                       <h1>
+                           Welcome To Book Store Management System
+                       </h1>
 
                    </div>
                 </div>

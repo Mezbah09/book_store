@@ -1,6 +1,6 @@
 <?php
-$page=explode('/',$_SERVER['PHP_SELF']);
-$page=$page[count($page) - 1];
+$page = explode('/', $_SERVER['PHP_SELF']);
+$page = $page[count($page) - 1];
 require_once './dbcon.php';
 
 
@@ -23,7 +23,7 @@ if (!isset($_SESSION['user_login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Book Store</title>
-  
+
     <!--load progress bar-->
     <script src="../assets/vendor/pace/pace.min.js"></script>
     <link href="../assets/vendor/pace/pace-theme-minimal.css" rel="stylesheet" />
@@ -39,8 +39,8 @@ if (!isset($_SESSION['user_login'])) {
     <link rel="stylesheet" href="../assets/vendor/toastr/toastr.min.css">
     <!--Magnific popup-->
     <link rel="stylesheet" href="../assets/vendor/magnific-popup/magnific-popup.css">
-     <!--dataTable-->
-     <link rel="stylesheet" href="../assets/vendor/data-table/media/css/dataTables.bootstrap.min.css">
+    <!--dataTable-->
+    <link rel="stylesheet" href="../assets/vendor/data-table/media/css/dataTables.bootstrap.min.css">
     <!--TEMPLATE css-->
     <!-- ========================================================= -->
     <link rel="stylesheet" href="../assets/stylesheets/css/style.css">
@@ -57,7 +57,7 @@ if (!isset($_SESSION['user_login'])) {
             <div class="leftside-header">
                 <div class="logo">
                     <a href="index.php" class="on-click">
-                       <h3>Book Store</h3>
+                        <h3>Book Store</h3>
                     </a>
                 </div>
                 <div id="menu-toggle" class="visible-xs toggle-left-sidebar" data-toggle-class="left-sidebar-open" data-target="html">
@@ -71,7 +71,7 @@ if (!isset($_SESSION['user_login'])) {
                 <!--USER HEADERBOX -->
                 <div class="header-section" id="user-headerbox">
                     <div class="user-header-wrap">
-                    
+
                         <div class="user-info">
                             <span class="user-name">Mezbah</span>
                             <span class="user-profile">Admin</span>
@@ -83,7 +83,7 @@ if (!isset($_SESSION['user_login'])) {
                         <div class="drop-content basic">
                             <ul>
                                 <li> <a href="pages_user-profile.html"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
-                               
+
                             </ul>
                         </div>
                     </div>
@@ -115,19 +115,19 @@ if (!isset($_SESSION['user_login'])) {
                         <nav>
                             <ul class="nav nav-left-lines" id="main-nav">
                                 <!--HOME-->
-                                <li class="<?= $page =='index.php' ? 'active-item':''?> "><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i><span>Dashboard</span></a></li>
-                                <li class="<?= $page =='test.php' ? 'active-item':''?>"><a href="test.php"><i class="fa fa-user" aria-hidden="true"></i><span>Admin</span></a></li>
-                                <li class="has-child-item close-item <?= $page =='add-book.php' ? 'open-item':''?> <?= $page =='manage-book.php' ? 'open-item':''?>">
+                                <li class="<?= $page == 'index.php' ? 'active-item' : '' ?> "><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i><span>Dashboard</span></a></li>
+                                <li class="<?= $page == 'test.php' ? 'active-item' : '' ?>"><a href="admin.php"><i class="fa fa-user" aria-hidden="true"></i><span>Admin</span></a></li>
+                                <li class="has-child-item close-item <?= $page == 'add-book.php' ? 'open-item' : '' ?> <?= $page == 'manage-book.php' ? 'open-item' : '' ?>">
                                     <a><i class="fa fa-book" aria-hidden="true"></i><span>Book</span></a>
                                     <ul class="nav child-nav level-1">
-                                        <li class="<?= $page =='add-book.php' ? 'active-item':''?>"><a href="add-book.php">Add Book</a></li>
-                                        <li class="<?= $page =='manage-book.php' ? 'active-item':''?>"><a href="manage-book.php">Manage Books</a></li>
-                                       
+                                        <li class="<?= $page == 'add-book.php' ? 'active-item' : '' ?>"><a href="add-book.php">Add Book</a></li>
+                                        <li class="<?= $page == 'manage-book.php' ? 'active-item' : '' ?>"><a href="manage-book.php">Manage Books</a></li>
+
                                     </ul>
                                 </li>
-                               
+
                             </ul>
-                        
+
                         </nav>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+
 <?php 
 require_once'./dbcon.php';
 session_start();
@@ -15,7 +16,8 @@ if(isset($_POST['Login'])){
   if(mysqli_num_rows($username_check) >0){
     $row =mysqli_fetch_assoc($username_check);
 
-    if($row['password']==md5($password)){
+    if($row['password']==
+    ($password)){
       if($row['status']=='active'){
         $_SESSION['user_login']=$username;
         header('location:index.php');
